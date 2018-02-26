@@ -8,7 +8,7 @@ import test.model.Empleados;
 
 public class MainUI {
 
-    private static final String saludo = "Bienvenido a este programa, acá inicializamos una lista.";
+    private static final String saludo = "Bienvenido a este programa, acá inicializamos una lista. Esta es la pagina.";
 
     private static List<Empleado> listaemp;
     private String listasize;
