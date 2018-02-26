@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+    <task-flow-definition id="fragmentsflow">
+        <default-activity>view1</default-activity>
+        <data-control-scope>
+            <shared/>
+        </data-control-scope>
+        <managed-bean id="__1">
+            <managed-bean-name>View1</managed-bean-name>
+            <managed-bean-class>test.view.View1UI</managed-bean-class>
+            <managed-bean-scope>view</managed-bean-scope>
+        </managed-bean>
+        <view id="view1">
+            <page>/view1.jsff</page>
+        </view>
+        <use-page-fragments/>
+    </task-flow-definition>
+</adfc-config>
