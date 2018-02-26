@@ -15,7 +15,7 @@ public class MainUI {
 
     public MainUI() {
         super();
-
+        
         listaemp = new ArrayList<>();
         listasize = "";
 

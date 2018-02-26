@@ -18,7 +18,6 @@ public class Empleados {
 
     public static void crearListaInicialEmpleados(List<Empleado> listaempleados) {
         
-        listaempleados.clear();
 
         Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 1000000);
         listaempleados.add(empleado1);
