@@ -23,7 +23,7 @@ public class View1UI {
 
     public View1UI() {
         super();
-        this.empleadoID = "Ingrese ID";
+        this.empleadoID = "00000";
         this.listaemple = (List<Empleado>) JSFUtil.resolveExpression("#{pageFlowScope.inputParameter1}");
     }
 
@@ -51,7 +51,7 @@ public class View1UI {
 
     public String createEmployees() {
         // Add event code here...
-        
+
         Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 1000000);
         this.listaemple.add(empleado1);
 
@@ -63,7 +63,7 @@ public class View1UI {
 
         Empleado empleado4 = new Empleado(65463445, "Patricia Teheran", new Date(), 4000000);
         this.listaemple.add(empleado4);
-        
+
         return null;
     }
 
@@ -77,27 +77,37 @@ public class View1UI {
 
     public String deleteEmployee(ActionEvent event) {
         // Add event code here...
-        
+
         RichButton buttonClicked = (RichButton) event.getComponent();
-        
+
         int id = (Integer) buttonClicked.getAttributes().get("test");
-        
-        
-        Iterator itera = this.listaemple.iterator();
 
-        while (itera.hasNext()) {
-
-            Empleado emplo = (Empleado) itera.next();
-            if (emplo.getId() == id) {
-                this.listaemple.remove(emplo);
-                break;
-            }
-
-        }
-        
+        this.borrarEmpleado(this.listaemple, id);
 
         return null;
     }
 
 
+    public String borrarConID() {
+        // Add event code here...
+        
+        this.borrarEmpleado(this.listaemple, Integer.parseInt(this.empleadoID));
+        return null;
+    }
+
+    public void borrarEmpleado(List<Empleado> lista, int id) {
+        
+        Iterator itera = lista.iterator();
+
+        while (itera.hasNext()) {
+
+            Empleado emplo = (Empleado) itera.next();
+            if (emplo.getId() == id) {
+                lista.remove(emplo);
+                break;
+            }
+
+        }
+    }
+    
 }

@@ -11,6 +11,12 @@
             <class>java.util.List&lt;test.model.Empleado&gt;</class>
             <required/>
         </input-parameter-definition>
+        <input-parameter-definition id="__2">
+            <name>inputParameter2</name>
+            <value>#{pageFlowScope.inputParameter2}</value>
+            <class>java.lang.Boolean</class>
+            <required/>
+        </input-parameter-definition>
         <managed-bean id="__1">
             <managed-bean-name>View1</managed-bean-name>
             <managed-bean-class>test.view.View1UI</managed-bean-class>

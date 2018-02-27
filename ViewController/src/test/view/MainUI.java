@@ -13,18 +13,41 @@ public class MainUI {
 
     private List<Empleado> listaemp;
     private String listasize;
+    private Boolean checkMark;
 
     public MainUI() {
         super();
         
-        listaemp = new ArrayList<>();
-        listaemp.add(new Empleado(431242, "Juan Perez", new Date(), 1000000));
-        listasize = "";
+        this.listaemp = new ArrayList<>();
+        this.listasize = "";
+        this.checkMark = Boolean.TRUE;
+        
 
     }
+    
 
     public String getSaludo() {
         return saludo;
+    }
+
+    public void setListasize(String listasize) {
+        this.listasize = listasize;
+    }
+    
+    public String getlistaSize() {
+
+        this.listasize = "" + listaemp.size();
+
+        return this.listasize;
+
+    }
+
+    public void setCheckMark(Boolean checkMark) {
+        this.checkMark = checkMark;
+    }
+
+    public Boolean getCheckMark() {
+        return checkMark;
     }
 
     public void setListaemp(List<Empleado> listaemp) {
@@ -34,15 +57,6 @@ public class MainUI {
     public List<Empleado> getListaemp() {
         return this.listaemp;
     }
-
-    public String getlistaSize() {
-
-        this.listasize = "" + listaemp.size();
-
-        return this.listasize;
-
-    }
-
 
     public String testoHere() {
         // Add event code here...
