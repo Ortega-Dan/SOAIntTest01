@@ -8,15 +8,15 @@
         <af:button text="Popular Datos" action="#{viewScope.View1.createEmployees}" id="b1"/>
         <af:button text="Borrar Todos" action="#{viewScope.View1.borrarTodosLosEmpleados}" id="b2"/>
         <af:separator id="s2"/>
-        <af:inputText label="ID: " value="Ingrese el ID" id="it1"/>
-        <af:button text="Filtrar" id="b4"/>
-        <af:button text="Borrar Elemento Encontrado" id="b5"/>
+        <af:inputText label="ID: " value="#{viewScope.View1.empleadoID}" id="it1"/>
+        <af:button text="Filtrar*" id="b4"/>
+        <af:button text="Borrar Elemento Encontrado" action="#{viewScope.View1.deleteEmployee}" id="b5"/>
       </af:gridCell>
     </af:gridRow>
     <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
       <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" halign="stretch">
         <af:table value="#{viewScope.View1.mainListaenFrag}" var="row" rowBandingInterval="0" id="t1"
-                  partialTriggers="::b1 ::b2">
+                  partialTriggers="::b1 ::b2 ::b5">
           <af:column sortable="false" headerText="ID" id="c1">
             <af:outputText value="#{row.id}" id="ot2"/>
           </af:column>
@@ -30,7 +30,7 @@
             <af:outputText value="#{row.salario}" id="ot5"/>
           </af:column>
           <af:column sortable="false" headerText="DELETE" id="c5">
-            <af:button text="DELETE" id="b3"/>
+            <af:button text="DELETE*" id="b3"/>
           </af:column>
         </af:table>
       </af:gridCell>
