@@ -12,6 +12,7 @@ import oracle.adf.view.rich.component.rich.nav.RichButton;
 
 import test.lib.JSFUtil;
 
+import test.model.BasicParamContainer;
 import test.model.Empleado;
 
 public class View1UI {
@@ -21,10 +22,17 @@ public class View1UI {
 
     private String empleadoID;
 
+    private BasicParamContainer primitparams;
+    
+    private boolean shouldIshow;
+    
+    
     public View1UI() {
         super();
         this.empleadoID = "00000";
         this.listaemple = (List<Empleado>) JSFUtil.resolveExpression("#{pageFlowScope.inputParameter1}");
+        this.primitparams = (BasicParamContainer) JSFUtil.resolveExpression("#{pageFlowScope.inputParameter3}");
+        this.shouldIshow = primitparams.isBooleano1();
     }
 
     public void setListaemple(List<Empleado> listaemple) {
@@ -90,13 +98,13 @@ public class View1UI {
 
     public String borrarConID() {
         // Add event code here...
-        
+        this.shouldIshow = this.primitparams.isBooleano1();
         this.borrarEmpleado(this.listaemple, Integer.parseInt(this.empleadoID));
         return null;
     }
 
     public void borrarEmpleado(List<Empleado> lista, int id) {
-        
+
         Iterator itera = lista.iterator();
 
         while (itera.hasNext()) {
@@ -109,5 +117,22 @@ public class View1UI {
 
         }
     }
-    
+
+
+    public void setPrimitparams(BasicParamContainer primitparams) {
+        this.primitparams = primitparams;
+    }
+
+    public BasicParamContainer getPrimitparams() {
+        return primitparams;
+    }
+
+    public void setShouldIshow(boolean shouldIshow) {
+        this.shouldIshow = this.primitparams.isBooleano1();
+    }
+
+    public boolean isShouldIshow() {
+        return shouldIshow;
+    }
+
 }

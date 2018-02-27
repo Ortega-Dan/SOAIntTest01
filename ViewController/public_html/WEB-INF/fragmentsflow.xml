@@ -17,6 +17,12 @@
             <class>java.lang.Boolean</class>
             <required/>
         </input-parameter-definition>
+        <input-parameter-definition id="__3">
+            <name>inputParameter3</name>
+            <value>#{pageFlowScope.inputParameter3}</value>
+            <class>test.model.BasicParamContainer</class>
+            <required/>
+        </input-parameter-definition>
         <managed-bean id="__1">
             <managed-bean-name>View1</managed-bean-name>
             <managed-bean-class>test.view.View1UI</managed-bean-class>

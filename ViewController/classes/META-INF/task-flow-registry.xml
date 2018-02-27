@@ -4,5 +4,6 @@
    <task-flow-descriptor path="WEB-INF/fragmentsflow.xml" id="fragmentsflow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp">
       <input-parameter name="inputParameter2"/>
       <input-parameter name="inputParameter1"/>
+      <input-parameter name="inputParameter3"/>
    </task-flow-descriptor>
 </task-flow-registry>
