@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
   <af:panelGridLayout id="pgl1">
     <af:gridRow marginTop="5px" height="auto" id="gr1">
       <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
@@ -8,15 +8,15 @@
         <af:button text="Popular Datos" action="#{viewScope.View1.createEmployees}" id="b1"/>
         <af:button text="Borrar Todos" action="#{viewScope.View1.borrarTodosLosEmpleados}" id="b2"/>
         <af:separator id="s2"/>
-        <af:inputText label="ID: " value="#{viewScope.View1.empleadoID}" id="it1"/>
+        <af:inputText label="ID: " value="#{viewScope.View1.empleadoID}" id="it1" />
         <af:button text="Filtrar*" id="b4"/>
-        <af:button text="Borrar Elemento Encontrado" action="#{viewScope.View1.deleteEmployee}" id="b5"/>
+        <af:button text="Borrar Elemento Encontrado" id="b5"/>
       </af:gridCell>
     </af:gridRow>
     <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
       <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" halign="stretch">
-        <af:table value="#{viewScope.View1.mainListaenFrag}" var="row" rowBandingInterval="0" id="t1"
-                  partialTriggers="::b1 ::b2 ::b5">
+        <af:table value="#{viewScope.View1.listaemple}" var="row" rowBandingInterval="0" id="t1"
+                  partialTriggers="::b1 ::b2 ::b5 b3">
           <af:column sortable="false" headerText="ID" id="c1">
             <af:outputText value="#{row.id}" id="ot2"/>
           </af:column>
@@ -30,7 +30,9 @@
             <af:outputText value="#{row.salario}" id="ot5"/>
           </af:column>
           <af:column sortable="false" headerText="DELETE" id="c5">
-            <af:button text="DELETE*" id="b3"/>
+            <af:button text="Delete1" actionListener="#{viewScope.View1.deleteEmployee}" id="b3">
+                <f:attribute value="#{row.id}" name="test"></f:attribute>
+            </af:button>
           </af:column>
         </af:table>
       </af:gridCell>

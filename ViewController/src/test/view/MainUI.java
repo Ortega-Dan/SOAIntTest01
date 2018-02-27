@@ -1,6 +1,7 @@
 package test.view;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import test.model.Empleado;
@@ -10,13 +11,14 @@ public class MainUI {
 
     private static final String saludo = "Bienvenido a este programa, acá inicializamos una lista. Esta es la pagina.";
 
-    private static List<Empleado> listaemp;
+    private List<Empleado> listaemp;
     private String listasize;
 
     public MainUI() {
         super();
         
         listaemp = new ArrayList<>();
+        listaemp.add(new Empleado(431242, "Juan Perez", new Date(), 1000000));
         listasize = "";
 
     }
@@ -25,12 +27,12 @@ public class MainUI {
         return saludo;
     }
 
-    public static void setListaemp(List<Empleado> listaemp) {
-        MainUI.listaemp = listaemp;
+    public void setListaemp(List<Empleado> listaemp) {
+        this.listaemp = listaemp;
     }
 
-    public static List<Empleado> getListaemp() {
-        return listaemp;
+    public List<Empleado> getListaemp() {
+        return this.listaemp;
     }
 
     public String getlistaSize() {

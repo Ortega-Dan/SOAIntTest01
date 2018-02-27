@@ -1,26 +1,39 @@
 package test.view;
 
-import java.util.List;
+import java.io.Serializable;
 
-import javax.faces.component.UIViewRoot;
-import javax.faces.context.FacesContext;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.faces.event.ActionEvent;
 
-import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.nav.RichButton;
+
+import test.lib.JSFUtil;
 
 import test.model.Empleado;
-import test.model.Empleados;
 
 public class View1UI {
+
+
+    private List<Empleado> listaemple;
 
     private String empleadoID;
 
     public View1UI() {
         super();
         this.empleadoID = "Ingrese ID";
+        this.listaemple = (List<Empleado>) JSFUtil.resolveExpression("#{pageFlowScope.inputParameter1}");
     }
 
+    public void setListaemple(List<Empleado> listaemple) {
+        this.listaemple = listaemple;
+    }
+
+    public List<Empleado> getListaemple() {
+        return listaemple;
+    }
 
     public void setEmpleadoID(String empleadoID) {
         this.empleadoID = empleadoID;
@@ -35,31 +48,53 @@ public class View1UI {
         return "Este es el fragmento:  ";
     }
 
-    public List<Empleado> getMainListaenFrag() {
-
-        return MainUI.getListaemp();
-
-    }
-
 
     public String createEmployees() {
         // Add event code here...
-        Empleados.crearListaInicialEmpleados(getMainListaenFrag());
+        
+        Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 1000000);
+        this.listaemple.add(empleado1);
+
+        Empleado empleado2 = new Empleado(5454354, "Carlos Suarez", new Date(), 2500000);
+        this.listaemple.add(empleado2);
+
+        Empleado empleado3 = new Empleado(8767665, "Jhon Martin", new Date(), 3500000);
+        this.listaemple.add(empleado3);
+
+        Empleado empleado4 = new Empleado(65463445, "Patricia Teheran", new Date(), 4000000);
+        this.listaemple.add(empleado4);
+        
         return null;
     }
 
     public String borrarTodosLosEmpleados() {
 
-        getMainListaenFrag().clear();
+        this.listaemple.clear();
 
         return null;
     }
 
 
-    public String deleteEmployee() {
+    public String deleteEmployee(ActionEvent event) {
         // Add event code here...
         
-        Empleados.borrarEmpleado(getMainListaenFrag(), Integer.parseInt(this.empleadoID));
+        RichButton buttonClicked = (RichButton) event.getComponent();
+        
+        int id = (Integer) buttonClicked.getAttributes().get("test");
+        
+        
+        Iterator itera = this.listaemple.iterator();
+
+        while (itera.hasNext()) {
+
+            Empleado emplo = (Empleado) itera.next();
+            if (emplo.getId() == id) {
+                this.listaemple.remove(emplo);
+                break;
+            }
+
+        }
+        
 
         return null;
     }

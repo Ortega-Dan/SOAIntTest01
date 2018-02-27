@@ -5,7 +5,11 @@
   <executables>
     <variableIterator id="variables"/>
     <taskFlow id="fragmentsflow1" taskFlowId="/WEB-INF/fragmentsflow.xml#fragmentsflow" activation="deferred"
-              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="inputParameter1" value="#{viewScope.Main.listaemp}"/>
+      </parameters>
+    </taskFlow>
   </executables>
   <bindings/>
 </pageDefinition>
