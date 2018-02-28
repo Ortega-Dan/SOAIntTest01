@@ -7,7 +7,7 @@
             <af:form id="f1">
                 <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
                     <f:facet name="center">
-                        <af:panelGroupLayout id="pgl2" layout="scroll" partialTriggers="sbc1">
+                        <af:panelGroupLayout id="pgl2" layout="scroll">
                             <af:region value="#{bindings.fragmentsflow1.regionModel}" id="r1" partialTriggers="::sbc1"/>
                         </af:panelGroupLayout>
                     </f:facet>

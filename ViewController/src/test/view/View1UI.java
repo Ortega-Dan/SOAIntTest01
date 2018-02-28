@@ -1,7 +1,5 @@
 package test.view;
 
-import java.io.Serializable;
-
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -23,16 +21,13 @@ public class View1UI {
     private String empleadoID;
 
     private BasicParamContainer primitparams;
-    
-    private boolean shouldIshow;
-    
-    
+
+
     public View1UI() {
         super();
         this.empleadoID = "00000";
         this.listaemple = (List<Empleado>) JSFUtil.resolveExpression("#{pageFlowScope.inputParameter1}");
         this.primitparams = (BasicParamContainer) JSFUtil.resolveExpression("#{pageFlowScope.inputParameter3}");
-        this.shouldIshow = primitparams.isBooleano1();
     }
 
     public void setListaemple(List<Empleado> listaemple) {
@@ -97,8 +92,6 @@ public class View1UI {
 
 
     public String borrarConID() {
-        // Add event code here...
-        this.shouldIshow = this.primitparams.isBooleano1();
         this.borrarEmpleado(this.listaemple, Integer.parseInt(this.empleadoID));
         return null;
     }
@@ -127,12 +120,9 @@ public class View1UI {
         return primitparams;
     }
 
-    public void setShouldIshow(boolean shouldIshow) {
-        this.shouldIshow = this.primitparams.isBooleano1();
-    }
 
     public boolean isShouldIshow() {
-        return shouldIshow;
+        return this.primitparams.isBooleano1();
     }
 
 }
