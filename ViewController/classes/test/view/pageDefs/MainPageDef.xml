@@ -8,7 +8,6 @@
               xmlns="http://xmlns.oracle.com/adf/controller/binding">
       <parameters>
         <parameter id="inputParameter1" value="#{viewScope.Main.listaemp}"/>
-        <parameter id="inputParameter2" value="#{viewScope.Main.checkMark}"/>
         <parameter id="inputParameter3" value="#{viewScope.Main.paramCont}"/>
       </parameters>
     </taskFlow>

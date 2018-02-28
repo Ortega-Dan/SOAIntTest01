@@ -1,12 +1,10 @@
 package test.view;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import test.model.BasicParamContainer;
 import test.model.Empleado;
-import test.model.Empleados;
 
 public class MainUI {
 
@@ -14,7 +12,6 @@ public class MainUI {
 
     private List<Empleado> listaemp;
     private String listasize;
-    private boolean checkMark;
     private BasicParamContainer paramCont;
 
     public MainUI() {
@@ -22,9 +19,8 @@ public class MainUI {
         
         this.listaemp = new ArrayList<>();
         this.listasize = "";
-        this.checkMark = true;
         this.paramCont = new BasicParamContainer();
-        this.paramCont.setBooleano1(this.checkMark);
+        this.paramCont.setBooleano1(true);
         
 
     }
@@ -56,11 +52,11 @@ public class MainUI {
 
     public void setCheckMark(boolean checkMark) {
         this.paramCont.setBooleano1(checkMark);
-        this.checkMark = checkMark;
+        
     }
 
     public boolean getCheckMark() {
-        return checkMark;
+        return this.paramCont.isBooleano1();
     }
 
     public void setListaemp(List<Empleado> listaemp) {
@@ -72,9 +68,7 @@ public class MainUI {
     }
 
     public String testoHere() {
-        // Add event code here...
-        // Empleados.crearListaInicialEmpleados(listaemp);
-        
+
         return null;
     }
 }

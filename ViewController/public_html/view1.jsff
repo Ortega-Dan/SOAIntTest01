@@ -4,12 +4,12 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-                <af:inputText label="ID: " value="#{viewScope.View1.empleadoID}" autoSubmit="true" id="it1">
-                    <af:validateRegExp pattern="[0-9]{1,10}" messageDetailNoMatch="Unicamente ingrese numeros"/>
-                </af:inputText>
                 <af:button text="Borrar Elemento con este Id / Refrescar" action="#{viewScope.View1.borrarConID}" id="b4"/>
                 <af:panelGroupLayout id="pgl2" visible="#{viewScope.View1.shouldIshow}"
                                    partialTriggers="b4">
+                    <af:inputText label="ID: " value="#{viewScope.View1.empleadoID}" autoSubmit="true" id="it1">
+                        <af:validateRegExp pattern="[0-9]{1,10}" messageDetailNoMatch="Unicamente ingrese numeros"/>
+                    </af:inputText>
                     <af:separator id="s3"/>
                     <af:outputText value="#{viewScope.View1.whatUp}" id="ot1" />
                     <af:separator id="s1"/>

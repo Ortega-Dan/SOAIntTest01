@@ -11,12 +11,6 @@
             <class>java.util.List&lt;test.model.Empleado&gt;</class>
             <required/>
         </input-parameter-definition>
-        <input-parameter-definition id="__2">
-            <name>inputParameter2</name>
-            <value>#{pageFlowScope.inputParameter2}</value>
-            <class>java.lang.Boolean</class>
-            <required/>
-        </input-parameter-definition>
         <input-parameter-definition id="__3">
             <name>inputParameter3</name>
             <value>#{pageFlowScope.inputParameter3}</value>
