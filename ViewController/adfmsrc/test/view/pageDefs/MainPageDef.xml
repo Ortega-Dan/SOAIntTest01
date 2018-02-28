@@ -7,8 +7,8 @@
     <taskFlow id="fragmentsflow1" taskFlowId="/WEB-INF/fragmentsflow.xml#fragmentsflow" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding">
       <parameters>
-        <parameter id="inputParameter1" value="#{viewScope.Main.listaemp}"/>
-        <parameter id="inputParameter3" value="#{viewScope.Main.paramCont}"/>
+        <parameter id="ListaEmpleados" value="#{viewScope.Main.listaemp}"/>
+        <parameter id="ObjPrimitParam" value="#{viewScope.Main.paramCont}"/>
       </parameters>
     </taskFlow>
   </executables>

@@ -36,7 +36,7 @@
                         <af:outputText value="#{row.salario}" id="ot5"/>
                     </af:column>
                     <af:column sortable="false" headerText="DELETE" id="c5" visible="#{viewScope.View1.shouldIshow}">
-                        <af:button text="Delete1" actionListener="#{viewScope.View1.deleteEmployee}" id="b3">
+                        <af:button text="Delete1" actionListener="#{viewScope.View1.borrarDesdeButton}" id="b3">
                             <f:attribute value="#{row.id}" name="test"></f:attribute>
                         </af:button>
                     </af:column>

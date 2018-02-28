@@ -2,7 +2,7 @@ package test.model;
 
 public class BasicParamContainer {
     
-    private boolean booleano1;
+    private boolean mostrarcontroles;
     
     
     public BasicParamContainer() {
@@ -11,12 +11,12 @@ public class BasicParamContainer {
     }
 
 
-    public void setBooleano1(boolean booleano1) {
-        this.booleano1 = booleano1;
+    public void setMostrarcontroles(boolean booleano1) {
+        this.mostrarcontroles = booleano1;
     }
 
-    public boolean isBooleano1() {
-        return booleano1;
+    public boolean isMostrarcontroles() {
+        return mostrarcontroles;
     }
 
 }

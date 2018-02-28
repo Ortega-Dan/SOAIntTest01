@@ -6,14 +6,14 @@
             <shared/>
         </data-control-scope>
         <input-parameter-definition id="__4">
-            <name>inputParameter1</name>
-            <value>#{pageFlowScope.inputParameter1}</value>
+            <name>ListaEmpleados</name>
+            <value>#{pageFlowScope.ListaEmpleados}</value>
             <class>java.util.List&lt;test.model.Empleado&gt;</class>
             <required/>
         </input-parameter-definition>
         <input-parameter-definition id="__3">
-            <name>inputParameter3</name>
-            <value>#{pageFlowScope.inputParameter3}</value>
+            <name>ObjPrimitParam</name>
+            <value>#{pageFlowScope.ObjPrimitParam}</value>
             <class>test.model.BasicParamContainer</class>
             <required/>
         </input-parameter-definition>

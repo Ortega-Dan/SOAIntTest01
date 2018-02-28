@@ -26,8 +26,8 @@ public class View1UI {
     public View1UI() {
         super();
         this.empleadoID = "00000";
-        this.listaemple = (List<Empleado>) JSFUtil.resolveExpression("#{pageFlowScope.inputParameter1}");
-        this.primitparams = (BasicParamContainer) JSFUtil.resolveExpression("#{pageFlowScope.inputParameter3}");
+        this.listaemple = (List<Empleado>) JSFUtil.resolveExpression("#{pageFlowScope.ListaEmpleados}");
+        this.primitparams = (BasicParamContainer) JSFUtil.resolveExpression("#{pageFlowScope.ObjPrimitParam}");
     }
 
     public void setListaemple(List<Empleado> listaemple) {
@@ -78,33 +78,34 @@ public class View1UI {
     }
 
 
-    public String deleteEmployee(ActionEvent event) {
+    public String borrarDesdeButton(ActionEvent event) {
         // Add event code here...
 
         RichButton buttonClicked = (RichButton) event.getComponent();
 
         int id = (Integer) buttonClicked.getAttributes().get("test");
 
-        this.borrarEmpleado(this.listaemple, id);
+        this.borrarEmpleado(id);
 
         return null;
     }
 
 
     public String borrarConID() {
-        this.borrarEmpleado(this.listaemple, Integer.parseInt(this.empleadoID));
+        
+        this.borrarEmpleado(Integer.parseInt(this.empleadoID));
         return null;
     }
 
-    public void borrarEmpleado(List<Empleado> lista, int id) {
+    public void borrarEmpleado(int id) {
 
-        Iterator itera = lista.iterator();
+        Iterator itera = this.listaemple.iterator();
 
         while (itera.hasNext()) {
 
             Empleado emplo = (Empleado) itera.next();
             if (emplo.getId() == id) {
-                lista.remove(emplo);
+                this.listaemple.remove(emplo);
                 break;
             }
 
@@ -122,7 +123,7 @@ public class View1UI {
 
 
     public boolean isShouldIshow() {
-        return this.primitparams.isBooleano1();
+        return this.primitparams.isMostrarcontroles();
     }
 
 }

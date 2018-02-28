@@ -20,7 +20,7 @@ public class MainUI {
         this.listaemp = new ArrayList<>();
         this.listasize = "";
         this.paramCont = new BasicParamContainer();
-        this.paramCont.setBooleano1(true);
+        this.paramCont.setMostrarcontroles(true);
         
 
     }
@@ -51,12 +51,12 @@ public class MainUI {
     }
 
     public void setCheckMark(boolean checkMark) {
-        this.paramCont.setBooleano1(checkMark);
+        this.paramCont.setMostrarcontroles(checkMark);
         
     }
 
     public boolean getCheckMark() {
-        return this.paramCont.isBooleano1();
+        return this.paramCont.isMostrarcontroles();
     }
 
     public void setListaemp(List<Empleado> listaemp) {
