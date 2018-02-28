@@ -68,11 +68,15 @@
       <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="test.model"/>
+   <value n="defaultPackage" v="test"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
-         <string v="ADFbc"/>
+         <string v="Database"/>
          <string v="Java"/>
+         <string v="TopLink"/>
+         <string v="WSDL"/>
+         <string v="WSPolicy"/>
+         <string v="WebServices"/>
          <string v="XML"/>
       </list>
    </hash>
@@ -81,8 +85,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="SOAIntTest01_Model_adflib">
-            <value n="adflib-connectionDetails" v="true"/>
+         <hash n="ServicioInformacionCliente-Client">
             <hash n="archiveOptions">
                <value n="hasManifest" v="true"/>
             </hash>
@@ -94,16 +97,12 @@
                            <value n="type" v="2"/>
                         </hash>
                         <hash>
-                           <value n="type" v="5"/>
+                           <value n="type" v="7"/>
                         </hash>
                      </list>
                      <value n="displayName" v="Project Output"/>
                      <hash n="filters">
                         <list n="rules">
-                           <hash>
-                              <value n="pattern" v="WEB-INF/classes/**"/>
-                              <value n="type" v="1"/>
-                           </hash>
                            <hash>
                               <value n="pattern" v="**"/>
                               <value n="type" v="0"/>
@@ -115,19 +114,18 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/SOAIntTest01_Model_adflib.jar"/>
-            <hash n="LibraryDependencies"/>
-            <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="SOAIntTest01_Model_adflib"/>
+            <url n="jarURL" path="deploy/ServicioInformacionCliente-Client.jar"/>
+            <value n="profileClass" v="oracle.jdeveloper.deploy.jar.ArchiveProfile"/>
+            <value n="profileName" v="ServicioInformacionCliente-Client"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="SOAIntTest01_Model_adflib"/>
+         <string v="ServicioInformacionCliente-Client"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="SOAIntTest01-Model-webapp"/>
-      <value n="j2eeWebContextRoot" v="SOAIntTest01-Model-context-root"/>
+      <value n="j2eeWebAppName" v="SOAIntTest01-WebService-webapp"/>
+      <value n="j2eeWebContextRoot" v="SOAIntTest01-WebService-context-root"/>
       <hash n="webContentSet">
          <list n="pattern-filters">
             <string v="-WEB-INF/temp/"/>
@@ -148,6 +146,36 @@
             <url path="src/"/>
          </list>
       </hash>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="JAX-WS Client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JAX-WS Web Services"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="TopLink"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="JAX-WS Client"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JAX-WS Web Services"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="TopLink"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>

@@ -8,7 +8,7 @@ public class Empleado {
     private int id;
     private String nombre;
     private Date fechaingreso;
-    private int salario;
+    private int edad;
 
 
     public Empleado() {
@@ -21,7 +21,7 @@ public class Empleado {
         this.id = id;
         this.nombre = nombre;
         this.fechaingreso =  fechaingreso;
-        this.salario = salario;
+        this.edad = salario;
 
     }
 
@@ -50,12 +50,12 @@ public class Empleado {
         return fechaingreso;
     }
 
-    public void setSalario(int salario) {
-        this.salario = salario;
+    public void setEdad(int salario) {
+        this.edad = salario;
     }
 
-    public int getSalario() {
-        return salario;
+    public int getEdad() {
+        return edad;
     }
 
 

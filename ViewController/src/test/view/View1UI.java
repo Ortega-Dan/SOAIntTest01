@@ -13,6 +13,8 @@ import test.lib.JSFUtil;
 import test.model.BasicParamContainer;
 import test.model.Empleado;
 
+import test.service.FacetEmpleados;
+
 public class View1UI {
 
 
@@ -54,18 +56,10 @@ public class View1UI {
 
     public String createEmployees() {
         // Add event code here...
-
-        Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 1000000);
-        this.listaemple.add(empleado1);
-
-        Empleado empleado2 = new Empleado(5454354, "Carlos Suarez", new Date(), 2500000);
-        this.listaemple.add(empleado2);
-
-        Empleado empleado3 = new Empleado(8767665, "Jhon Martin", new Date(), 3500000);
-        this.listaemple.add(empleado3);
-
-        Empleado empleado4 = new Empleado(65463445, "Patricia Teheran", new Date(), 4000000);
-        this.listaemple.add(empleado4);
+        
+        this.listaemple.clear();
+        
+        FacetEmpleados.fillEmpleados(this.listaemple);
 
         return null;
     }
