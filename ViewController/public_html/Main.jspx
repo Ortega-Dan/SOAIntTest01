@@ -11,7 +11,6 @@
                             <af:region value="#{bindings.fragmentsflow1.regionModel}" id="r1" partialTriggers="::sbc1"/>
                         </af:panelGroupLayout>
                     </f:facet>
-                    
                     <f:facet name="header"/>
                     <f:facet name="end"/>
                     <f:facet name="start">
@@ -21,12 +20,10 @@
                                     <af:outputText value="#{Main.saludo}" id="ot2"/>
                                 </af:gridCell>
                             </af:gridRow>
-                            
                             <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                                    
-                                    <af:outputText value="Tamaño actual de la lista: #{Main.listaSize}" id="ot3" partialTriggers="b1"
-                                                   inlineStyle="font-size:large; color: Navy;"/>
+                                    <af:outputText value="Tama&#241;o actual de la lista: #{Main.listaSize}" id="ot3"
+                                                   partialTriggers="b1" inlineStyle="font-size:large; color: Navy;"/>
                                     <af:spacer width="20" height="10" id="s1"/>
                                     <af:button text="Refresh" action="#{Main.testoHere}" id="b1"/>
                                 </af:gridCell>
@@ -34,10 +31,10 @@
                             <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                                     <af:spacer width="10" height="30" id="s2"/>
-                                    <af:selectBooleanCheckbox text="" value="#{Main.checkMark}" autoSubmit="true" label="Mostrar Controles en Fragmento" id="sbc1"/>
+                                    <af:selectBooleanCheckbox text="" value="#{Main.checkMark}" autoSubmit="true"
+                                                              label="Mostrar Controles en Fragmento" id="sbc1"/>
                                 </af:gridCell>
                             </af:gridRow>
-                            
                         </af:panelGridLayout>
                     </f:facet>
                     <f:facet name="branding"/>
