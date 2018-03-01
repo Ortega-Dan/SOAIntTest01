@@ -12,16 +12,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
-public class FacetEmpleados {
+public class FacadeEmpleados {
 
-    public FacetEmpleados() {
+    public FacadeEmpleados() {
         super();
     }
 
 
     public static void fillEmpleados(List<Empleado> listaallenar) {
-        
-        System.out.println("Test");
         
         ServicioInformacionCliente servicio = new ServicioInformacionCliente();
         InformacionClientePort port = servicio.getInformacionCliente();
@@ -46,8 +44,6 @@ public class FacetEmpleados {
             
             Empleado emplo = new Empleado(usuenserv.getNumeroIdentificacion(), usuenserv.getNombres() + " " + usuenserv.getApellidos(), usuenserv.getFechaRegistro().toGregorianCalendar().getTime(), usuenserv.getEdad());
             listaallenar.add(emplo);
-
-            System.out.println(usuenserv.getNombres());
 
         }
 

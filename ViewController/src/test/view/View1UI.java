@@ -13,7 +13,7 @@ import test.lib.JSFUtil;
 import test.model.BasicParamContainer;
 import test.model.Empleado;
 
-import test.service.FacetEmpleados;
+import test.service.FacadeEmpleados;
 
 public class View1UI {
 
@@ -58,8 +58,8 @@ public class View1UI {
         // Add event code here...
         
         this.listaemple.clear();
-        
-        FacetEmpleados.fillEmpleados(this.listaemple);
+
+        FacadeEmpleados.fillEmpleados(this.listaemple);
 
         return null;
     }
