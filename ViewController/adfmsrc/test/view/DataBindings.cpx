@@ -8,8 +8,10 @@
   </definitionFactories>
   <pageMap>
     <page path="/Main.jspx" usageId="test_view_MainPageDef"/>
+    <page path="/view1.jsff" usageId="test_view_view1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="test_view_MainPageDef" path="test.view.pageDefs.MainPageDef"/>
+    <page id="test_view_view1PageDef" path="test.view.pageDefs.view1PageDef"/>
   </pageDefinitionUsages>
 </Application>
