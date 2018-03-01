@@ -1,2 +1,4 @@
 .adf/
 .data/
+*.class
+*/classes/
