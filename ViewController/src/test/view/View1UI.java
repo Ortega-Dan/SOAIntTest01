@@ -55,13 +55,28 @@ public class View1UI {
 
 
     public String createEmployees() {
-        // Add event code here...
         
         this.listaemple.clear();
+        
+        // UNCOMMENT THIS...
+        // FacadeEmpleados.fillEmpleados(this.listaemple);
+        
+        // AND COMMENT FROM HERE ....
+        Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 1000000);
+        this.listaemple.add(empleado1);
 
-        FacadeEmpleados.fillEmpleados(this.listaemple);
+        Empleado empleado2 = new Empleado(5454354, "Carlos Suarez", new Date(), 2500000);
+        this.listaemple.add(empleado2);
 
+        Empleado empleado3 = new Empleado(8767665, "Jhon Martin", new Date(), 3500000);
+        this.listaemple.add(empleado3);
+
+        Empleado empleado4 = new Empleado(65463445, "Patricia Teheran", new Date(), 4000000);
+        this.listaemple.add(empleado4);
+        // ... TO HERE !
+        
         return null;
+        
     }
 
     public String borrarTodosLosEmpleados() {
