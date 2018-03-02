@@ -15,7 +15,8 @@
                     <af:inputText label="ID: " value="#{viewScope.View1.empleadoID}" autoSubmit="true" id="it1">
                         <af:validateRegExp pattern="[0-9]{1,10}" messageDetailNoMatch="Unicamente ingrese numeros"/>
                     </af:inputText>
-                    <af:button text="Borrar Elemento con este Id" action="#{viewScope.View1.borrarConID}" id="b4"/>
+                    <af:button text="Borrar Elemento con este Id" action="#{viewScope.View1.borrarConID}" id="b4"
+                               actionListener="#{viewScope.View1.disparadorDeEvento}"/>
                 </af:panelGroupLayout>
             </af:gridCell>
         </af:gridRow>

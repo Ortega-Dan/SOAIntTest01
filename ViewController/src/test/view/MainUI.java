@@ -3,6 +3,8 @@ package test.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import test.lib.JSFUtil;
+
 import test.model.BasicParamContainer;
 import test.model.Empleado;
 
@@ -70,5 +72,11 @@ public class MainUI {
     public String testoHere() {
 
         return null;
+    }
+
+    void recibirEvento(Object carga) {
+        
+        JSFUtil.refreshComponent(JSFUtil.findComponentInRoot("ot3"));
+        
     }
 }

@@ -6,9 +6,12 @@ import java.util.List;
 
 import javax.faces.event.ActionEvent;
 
+import javax.faces.event.ValueChangeEvent;
+
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 
 import test.lib.JSFUtil;
+import test.lib.ADFUtil;
 
 import test.model.BasicParamContainer;
 import test.model.Empleado;
@@ -135,4 +138,11 @@ public class View1UI {
         return this.primitparams.isMostrarcontroles();
     }
 
+
+    public void disparadorDeEvento(ActionEvent actionEvent) {
+        // Add event code here...
+        
+        ADFUtil.dispararContextualEvent("onUpdateRefreshEventBinding", actionEvent);
+        
+    }
 }

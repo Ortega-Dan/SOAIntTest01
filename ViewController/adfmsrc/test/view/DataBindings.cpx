@@ -14,4 +14,7 @@
     <page id="test_view_MainPageDef" path="test.view.pageDefs.MainPageDef"/>
     <page id="test_view_view1PageDef" path="test.view.pageDefs.view1PageDef"/>
   </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ContextEventHandler" path="test.view.ContextEventHandler"/>
+  </dataControlUsages>
 </Application>

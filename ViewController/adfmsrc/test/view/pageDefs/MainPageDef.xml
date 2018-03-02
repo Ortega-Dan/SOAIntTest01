@@ -12,5 +12,22 @@
       </parameters>
     </taskFlow>
   </executables>
-  <bindings/>
+  <bindings>
+    <methodAction id="procesarEvento" RequiresUpdateModel="true" Action="invokeMethod" MethodName="procesarEvento"
+                  IsViewObjectMethod="false" DataControl="ContextEventHandler"
+                  InstanceName="bindings.procesarEvento.dataControl.dataProvider">
+      <NamedData NDName="carga" NDType="java.lang.Object"/>
+    </methodAction>
+  </bindings>
+  <eventMap xmlns="http://xmlns.oracle.com/adfm/contextualEvent">
+    <event name="onUpdateRefresh">
+      <producer region="fragmentsflow1.view1PageDef.onUpdateRefreshEventBinding">
+        <consumer region="" handler="procesarEvento">
+          <parameters>
+            <parameter name="carga" value="#{data.payLoad}"/>
+          </parameters>
+        </consumer>
+      </producer>
+    </event>
+  </eventMap>
 </pageDefinition>
