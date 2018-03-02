@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1daa7722-83e2-403f-add0-918a0faffb6e" activeEnvironment="Default" name="SOAPUIMockingService" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="95ce57b6-56b8-4e6f-97ff-50ac7dae6ce3" wsaVersion="NONE" name="binding" type="wsdl" bindingName="{http://www.soaint.com/InformacionCliente/}binding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/jsilva/Desktop/InformacionCliente.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/jsilva/Desktop/InformacionCliente.wsdl"><con:part><con:url>file:/C:/Users/jsilva/Desktop/InformacionCliente.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="InformacionCliente" targetNamespace="http://www.soaint.com/InformacionCliente/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ic="http://www.soaint.com/InformacionCliente/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.soaint.com/InformacionCliente/">
+      <xsd:element name="consultarClientesRs" type="ic:ListaCLienteType"></xsd:element>
+      <xsd:element name="consultarClientesRq" type="ic:ClienteType"></xsd:element>
+      <xsd:complexType name="ClienteType">
+        <xsd:sequence>
+          <xsd:element name="tipoIdentificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+          <xsd:element name="numeroIdentificacion" type="xsd:int" minOccurs="1" maxOccurs="1"/>
+          <xsd:element name="nombres" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+          <xsd:element name="apellidos" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+          <xsd:element name="edad" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+          <xsd:element name="fechaRegistro" type="xsd:date" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListaCLienteType">
+        <xsd:sequence>
+          <xsd:element name="listadoClientes" type="ic:ClienteType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="clientePoseeMoraRq" type="ic:ClienteType"/>
+      <xsd:element name="clientePoseeMoraRs" type="ic:MoraType"/>
+      <xsd:complexType name="MoraType">
+        <xsd:sequence>
+          <xsd:element name="enMora" type="xsd:boolean" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarClientesRq">
+    <wsdl:part name="parameters" element="ic:consultarClientesRq"/>
+  </wsdl:message>
+  <wsdl:message name="consultarClientesRs">
+    <wsdl:part name="parameters" element="ic:consultarClientesRs"/>
+  </wsdl:message>
+  <wsdl:message name="clientePoseeMoraRq">
+    <wsdl:part name="parameters" element="ic:clientePoseeMoraRq"/>
+  </wsdl:message>
+  <wsdl:message name="clientePoseeMoraRs">
+    <wsdl:part name="parameters" element="ic:clientePoseeMoraRs"/>
+  </wsdl:message>
+  <wsdl:portType name="InformacionClientePort">
+    <wsdl:operation name="consultarClientes">
+      <wsdl:input message="ic:consultarClientesRq"/>
+      <wsdl:output message="ic:consultarClientesRs"/>
+    </wsdl:operation>
+    <wsdl:operation name="clientePoseeMora">
+      <wsdl:input message="ic:clientePoseeMoraRq"/>
+      <wsdl:output message="ic:clientePoseeMoraRs"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="binding" type="ic:InformacionClientePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="consultarClientes">
+      <soap:operation soapAction="http://www.soaint.com/InformacionCliente/consultarClientes"></soap:operation>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clientePoseeMora">
+      <soap:operation soapAction="http://www.soaint.com/InformacionCliente/clientePoseeMora"></soap:operation>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioInformacionCliente">
+    <wsdl:port name="InformacionCliente" binding="ic:binding">
+      <soap:address location="http://www.soaint.com/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://jsilva:8088/consultarClientes</con:endpoint><con:endpoint>http://localhost:8088/consultarClientes</con:endpoint><con:endpoint>http://www.soaint.com/</con:endpoint></con:endpoints><con:operation id="a222c8d1-cd85-40bc-a1e3-57b1da8c6d59" isOneWay="false" action="http://www.soaint.com/InformacionCliente/consultarClientes" name="consultarClientes" bindingOperationName="consultarClientes" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="78574b79-c610-4921-b7fd-c9e39ed43be6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/consultarClientes</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://www.soaint.com/InformacionCliente/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inf:consultarClientesRq>
+         <tipoIdentificacion>?</tipoIdentificacion>
+         <numeroIdentificacion>?</numeroIdentificacion>
+         <fechaRegistro>?</fechaRegistro>
+      </inf:consultarClientesRq>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.soaint.com/InformacionCliente/consultarClientes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="03b8bc19-11d4-46e6-8c5e-6eaba41ad239" isOneWay="false" action="http://www.soaint.com/InformacionCliente/clientePoseeMora" name="clientePoseeMora" bindingOperationName="clientePoseeMora" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f3dbbfab-ad4c-43b6-8ee1-c7c75fd403e3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://jsilva:8088/consultarClientes</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://www.soaint.com/InformacionCliente/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inf:clientePoseeMoraRq>
+         <tipoIdentificacion>?</tipoIdentificacion>
+         <numeroIdentificacion>?</numeroIdentificacion>
+      </inf:clientePoseeMoraRq>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.soaint.com/InformacionCliente/clientePoseeMora"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="fb4a23a8-eb56-4ca7-a999-1aef46ea796a" port="8088" path="/consultarClientes" host="localhost" name="ConsultarClientesMockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="consultarClientes" id="7eb8879c-e59b-43e7-95e8-90df1fa403fa" interface="binding" operation="consultarClientes"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="f93b6f4f-a656-4602-813c-3e4401d87693" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://www.soaint.com/InformacionCliente/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inf:consultarClientesRs>
+         <listadoClientes>
+            <tipoIdentificacion>CE</tipoIdentificacion>
+            <numeroIdentificacion>345789</numeroIdentificacion>
+            <nombres>Javier</nombres>
+            <apellidos>Hernandez</apellidos>
+            <edad>30</edad>
+            <fechaRegistro>2017-05-22</fechaRegistro>
+         </listadoClientes>
+         <listadoClientes>
+            <tipoIdentificacion>CC</tipoIdentificacion>
+            <numeroIdentificacion>43243</numeroIdentificacion>
+            <nombres>Rafael</nombres>
+            <apellidos>Sota</apellidos>
+            <edad>19</edad>
+            <fechaRegistro>2016-02-15</fechaRegistro>
+         </listadoClientes>
+         <listadoClientes>
+            <tipoIdentificacion>CC</tipoIdentificacion>
+            <numeroIdentificacion>655435</numeroIdentificacion>
+            <nombres>Luis</nombres>
+            <apellidos>Martinez</apellidos>
+            <edad>23</edad>
+            <fechaRegistro>2018-05-20</fechaRegistro>
+         </listadoClientes>
+         <listadoClientes>
+            <tipoIdentificacion>CE</tipoIdentificacion>
+            <numeroIdentificacion>654543</numeroIdentificacion>
+            <nombres>Jennifer</nombres>
+            <apellidos>Bohorquez</apellidos>
+            <edad>26</edad>
+            <fechaRegistro>2015-04-18</fechaRegistro>
+         </listadoClientes>
+         <listadoClientes>
+            <tipoIdentificacion>CM</tipoIdentificacion>
+            <numeroIdentificacion>209382</numeroIdentificacion>
+            <nombres>James P</nombres>
+            <apellidos>Sullivan SOAP</apellidos>
+            <edad>46</edad>
+            <fechaRegistro>2018-01-22</fechaRegistro>
+         </listadoClientes>
+      </inf:consultarClientesRs>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.soaint.com/InformacionCliente/consultarClientes"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="clientePoseeMora" id="c88a67b9-9a40-4bab-8ef8-03353626761f" interface="binding" operation="clientePoseeMora"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="421fece3-ff69-4f14-884d-46c6eba5fac7" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://www.soaint.com/InformacionCliente/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <inf:clientePoseeMoraRs>
+         <enMora>true</enMora>
+      </inf:clientePoseeMoraRs>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.soaint.com/InformacionCliente/clientePoseeMora"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

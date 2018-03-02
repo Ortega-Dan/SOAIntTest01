@@ -15,6 +15,7 @@ public class MainUI {
     private List<Empleado> listaemp;
     private String listasize;
     private BasicParamContainer paramCont;
+    private boolean mostrarContextEventAlert;
 
     public MainUI() {
         super();
@@ -74,11 +75,21 @@ public class MainUI {
         return null;
     }
 
+
+    public void setMostrarContextEventAlert(boolean mostrarContextEventAlert) {
+        this.mostrarContextEventAlert = mostrarContextEventAlert;
+    }
+
+    public boolean isMostrarContextEventAlert() {
+        return mostrarContextEventAlert;
+    }
+
     void recibirEvento(Object carga) {
         
         JSFUtil.refreshComponent(JSFUtil.findComponentInRoot("ot3"));
         
-        //JSFUtil.addInfoMessage("Size: " + carga);
+        if(this.mostrarContextEventAlert)
+            JSFUtil.addInfoMessage("Size: " + carga);
         
     }
 }

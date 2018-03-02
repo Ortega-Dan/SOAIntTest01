@@ -16,6 +16,7 @@ import test.model.Empleado;
 
 import test.service.FacadeEmpleados;
 
+
 public class View1UI {
 
 
@@ -24,6 +25,7 @@ public class View1UI {
     private String empleadoID;
 
     private BasicParamContainer primitparams;
+    private boolean usarSOAP;
 
 
     public View1UI() {
@@ -55,29 +57,41 @@ public class View1UI {
     }
 
 
+    public void setUsarSOAP(boolean usarSOAP) {
+        this.usarSOAP = usarSOAP;
+    }
+
+    public boolean isUsarSOAP() {
+        return usarSOAP;
+    }
+
+
     public String createEmployees() {
 
         this.listaemple.clear();
 
         String howwas = "Exitoso";
 
+        if (this.usarSOAP) {
 
-        // UNCOMMENT THIS...
-        //howwas = FacadeEmpleados.fillEmpleados(this.listaemple, howwas);
+            howwas = FacadeEmpleados.fillEmpleados(this.listaemple, howwas);
+        } else {
 
-        // AND COMMENT FROM HERE ....
-        Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 1000000);
-        this.listaemple.add(empleado1);
+            Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 432);
+            this.listaemple.add(empleado1);
 
-        Empleado empleado2 = new Empleado(5454354, "Carlos Suarez", new Date(), 2500000);
-        this.listaemple.add(empleado2);
+            Empleado empleado2 = new Empleado(5454354, "Carlos Suarez", new Date(), 54);
+            this.listaemple.add(empleado2);
 
-        Empleado empleado3 = new Empleado(8767665, "Jhon Martin", new Date(), 3500000);
-        this.listaemple.add(empleado3);
+            Empleado empleado3 = new Empleado(8767665, "Jhon Martin", new Date(), 654);
+            this.listaemple.add(empleado3);
 
-        Empleado empleado4 = new Empleado(65463445, "Patricia Teheran", new Date(), 4000000);
-        this.listaemple.add(empleado4);
-        // ... TO HERE !
+            Empleado empleado4 = new Empleado(65463445, "Patricia Teheran", new Date(), 564);
+            this.listaemple.add(empleado4);
+
+            Empleado empleado5 = new Empleado(2039824, "Mike Wazowski", new Date(), 8789);
+            this.listaemple.add(empleado5);
+        }
 
         if (!howwas.equals("Exitoso")) {
             JSFUtil.addErrorMessage("El error que recibimos es: \n" + howwas);

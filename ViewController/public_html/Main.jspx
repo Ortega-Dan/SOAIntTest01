@@ -8,7 +8,8 @@
                 <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
                     <f:facet name="center">
                         <af:panelGroupLayout id="pgl2" layout="scroll">
-                            <af:region value="#{bindings.fragmentsflow1.regionModel}" id="r1" partialTriggers="::sbc1"/>
+                            <af:region value="#{bindings.fragmentsflow1.regionModel}" id="r1"
+                                       partialTriggers="::sor1"/>
                         </af:panelGroupLayout>
                     </f:facet>
                     <f:facet name="header"/>
@@ -30,9 +31,16 @@
                             </af:gridRow>
                             <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-                                    <af:spacer width="10" height="30" id="s2"/>
-                                    <af:selectBooleanCheckbox text="" value="#{Main.checkMark}" autoSubmit="true"
-                                                              label="Mostrar Controles en Fragmento" id="sbc1"/>
+                                    <af:spacer width="10" height="20" id="s2"/>
+                                    <af:selectOneRadio label="MOSTRAR CONTROLES" autoSubmit="true"
+                                                       value="#{viewScope.Main.checkMark}" id="sor1">
+                                        <af:selectItem label="True" value="true" id="si1"/>
+                                        <af:selectItem label="False" value="false" id="si2"/>
+                                    </af:selectOneRadio>
+                                    <af:spacer width="10" height="30" id="s3"/>
+                                    <af:selectBooleanCheckbox text="" value="#{Main.mostrarContextEventAlert}"
+                                                              autoSubmit="true"
+                                                              label="Mostrar alerta de evento contextual" id="sbc1"/>
                                 </af:gridCell>
                             </af:gridRow>
                         </af:panelGridLayout>

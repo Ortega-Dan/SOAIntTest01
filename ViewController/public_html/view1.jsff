@@ -7,8 +7,10 @@
                 <af:panelGroupLayout id="pgl2" visible="#{viewScope.View1.shouldIshow}">
                     <af:outputText value="#{viewScope.View1.whatUp}" id="ot1"/>
                     <af:separator id="s1"/>
+                    <af:selectBooleanCheckbox label="SOAP?" value="#{viewScope.View1.usarSOAP}"
+                                              autoSubmit="true" id="sbc1"/>
                     <af:button text="Popular Datos" action="#{viewScope.View1.createEmployees}" id="b1"/>
-                    <af:button text="Borrar Todos" action="#{viewScope.View1.borrarTodosLosEmpleados}"  id="b2"/>
+                    <af:button text="Borrar Todos" action="#{viewScope.View1.borrarTodosLosEmpleados}" id="b2"/>
                     <af:separator id="s2"/>
                     <af:spacer width="10" height="18" id="s4"/>
                     <af:separator id="s3"/>
@@ -26,16 +28,16 @@
                     <af:column sortable="false" headerText="ID" id="c1">
                         <af:outputText value="#{row.id}" id="ot2"/>
                     </af:column>
-                    <af:column sortable="false" headerText="NOMBRE" id="c2">
+                    <af:column sortable="false" headerText="NOMBRE" id="c2" width="150px">
                         <af:outputText value="#{row.nombre}" id="ot3"/>
                     </af:column>
-                    <af:column sortable="false" headerText="FECHAINGRESO" id="c3">
+                    <af:column sortable="false" headerText="FECHAINGRESO" id="c3" width="120px">
                         <af:outputText value="#{row.fechaingreso}" id="ot4"/>
                     </af:column>
-                    <af:column sortable="false" headerText="EDAD" id="c4">
+                    <af:column sortable="false" headerText="EDAD" id="c4" width="55px">
                         <af:outputText value="#{row.edad}" id="ot5"/>
                     </af:column>
-                    <af:column sortable="false" headerText="DELETE" id="c5" visible="#{viewScope.View1.shouldIshow}">
+                    <af:column sortable="false" headerText="DELETE" width="auto" id="c5" visible="#{viewScope.View1.shouldIshow}">
                         <af:button text="Delete1" actionListener="#{viewScope.View1.borrarDesdeButton}" id="b3">
                             <f:attribute value="#{row.id}" name="test"></f:attribute>
                         </af:button>
