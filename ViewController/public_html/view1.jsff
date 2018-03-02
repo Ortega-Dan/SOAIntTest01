@@ -68,6 +68,9 @@
                     </af:column>
                     <af:column sortable="false" headerText="POP-UP 2" width="auto" id="c7"
                                visible="#{viewScope.View1.shouldIshow}">
+                        <af:button text="set it" actionListener="#{viewScope.View1.setEmploForPopUp}" id="b5">
+                            <f:attribute name="emplo" value="#{row}"/>
+                        </af:button>
                         <af:commandToolbarButton text="PopUp 2">
                             <af:showPopupBehavior popupId="::p2"/>
                         </af:commandToolbarButton>
@@ -76,7 +79,10 @@
             </af:gridCell>
         </af:gridRow>
     </af:panelGridLayout>
-    <af:popup childCreation="deferred" autoCancel="enabled" id="p2">
-        <af:region value="#{bindings.secondWindowPopUp1.regionModel}" id="r1"/>
+    <af:popup childCreation="deferred" id="p2">
+        <af:dialog id="d2" type="none">
+            <f:facet name="buttonBar"/>
+            <af:region value="#{bindings.secondWindowPopUp1.regionModel}" id="r1" partialTriggers="::t1:b5"/>
+        </af:dialog>
     </af:popup>
 </jsp:root>

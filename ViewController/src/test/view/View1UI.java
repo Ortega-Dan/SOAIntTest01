@@ -29,6 +29,8 @@ public class View1UI {
 
     private BasicParamContainer primitparams;
     private boolean usarSOAP;
+    
+    private Empleado emploforpopup;
 
 
     public View1UI() {
@@ -68,6 +70,14 @@ public class View1UI {
         return usarSOAP;
     }
 
+
+    public void setEmploforpopup(Empleado emploforpopup) {
+        this.emploforpopup = emploforpopup;
+    }
+
+    public Empleado getEmploforpopup() {
+        return emploforpopup;
+    }
 
     public String createEmployees() {
 
@@ -184,5 +194,19 @@ public class View1UI {
             JSFUtil.addFacesInformationMessage("Se hizo click en Nó!!!");
         }
 
+    }
+
+    public String setEmploForPopUp(ActionEvent actionEvent) {
+        // Add event code here...
+        
+        // TOMAR ACÁ EL BOTÓN Y OBTENER EL EMPLEADO Y SETEARSELO A ESTA CLASE, 
+        // PARA QUE CUANDO SE CONSTRUYA EL POPUP PUEDA SER PASADO COMO PARAMENTRO
+        System.out.println("TEsto !!!");
+        RichButton button = (RichButton) actionEvent.getComponent();
+        this.emploforpopup = (Empleado) button.getAttributes().get("emplo");
+        
+        
+        return null;
+        
     }
 }

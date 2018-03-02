@@ -5,7 +5,11 @@
     <executables>
         <variableIterator id="variables"/>
         <taskFlow id="secondWindowPopUp1" taskFlowId="/WEB-INF/secondWindowPopUp.xml#secondWindowPopUp"
-                  activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+                  activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding">
+            <parameters>
+                <parameter id="popUpEmpleado" value="#{viewScope.View1.emploforpopup}"/>
+            </parameters>
+        </taskFlow>
     </executables>
     <bindings>
         <eventBinding id="onUpdateRefreshEventBinding" Listener="javax.faces.event.ActionListener">
