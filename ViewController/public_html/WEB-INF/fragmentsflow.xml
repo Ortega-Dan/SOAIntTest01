@@ -25,6 +25,19 @@
         <view id="view1">
             <page>/view1.jsff</page>
         </view>
+        <task-flow-call id="secondWindowPopUp">
+            <task-flow-reference>
+                <document>/WEB-INF/secondWindowPopUp.xml</document>
+                <id>secondWindowPopUp</id>
+            </task-flow-reference>
+        </task-flow-call>
+        <control-flow-rule id="__2">
+            <from-activity-id>view1</from-activity-id>
+            <control-flow-case id="__5">
+                <from-outcome>showPopUp</from-outcome>
+                <to-activity-id>secondWindowPopUp</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
         <use-page-fragments/>
     </task-flow-definition>
 </adfc-config>

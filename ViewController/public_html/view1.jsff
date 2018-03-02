@@ -7,8 +7,8 @@
                 <af:panelGroupLayout id="pgl2" visible="#{viewScope.View1.shouldIshow}">
                     <af:outputText value="#{viewScope.View1.whatUp}" id="ot1"/>
                     <af:separator id="s1"/>
-                    <af:selectBooleanCheckbox label="SOAP?" value="#{viewScope.View1.usarSOAP}"
-                                              autoSubmit="true" id="sbc1"/>
+                    <af:selectBooleanCheckbox label="SOAP?" value="#{viewScope.View1.usarSOAP}" autoSubmit="true"
+                                              id="sbc1"/>
                     <af:button text="Popular Datos" action="#{viewScope.View1.createEmployees}" id="b1"/>
                     <af:button text="Borrar Todos" action="#{viewScope.View1.borrarTodosLosEmpleados}" id="b2"/>
                     <af:separator id="s2"/>
@@ -37,13 +37,46 @@
                     <af:column sortable="false" headerText="EDAD" id="c4" width="55px">
                         <af:outputText value="#{row.edad}" id="ot5"/>
                     </af:column>
-                    <af:column sortable="false" headerText="DELETE" width="auto" id="c5" visible="#{viewScope.View1.shouldIshow}">
-                        <af:button text="Delete1" actionListener="#{viewScope.View1.borrarDesdeButton}" id="b3">
+                    <af:column sortable="false" headerText="DELETE" width="auto" id="c5"
+                               visible="#{viewScope.View1.shouldIshow}">
+                        <af:button text="Delete" actionListener="#{viewScope.View1.borrarDesdeButton}" id="b3">
                             <f:attribute value="#{row.id}" name="test"></f:attribute>
                         </af:button>
+                    </af:column>
+                    <af:column sortable="false" headerText="POP-UP 1" width="auto" id="c6"
+                               visible="#{viewScope.View1.shouldIshow}">
+                        <af:commandToolbarButton text="PopUp 1">
+                            <af:showPopupBehavior popupId="p1"/>
+                        </af:commandToolbarButton>
+                        <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                            <af:dialog id="d1" dialogListener="#{viewScope.View1.closedDialog}" type="yesNoCancel"
+                                       contentWidth="230" contentHeight="150">
+                                <f:facet name="buttonBar"/>
+                                <af:outputLabel value="ID" id="ol1"/>
+                                <af:outputText value="#{row.id}" id="ot6"/>
+                                <br/>
+                                <af:outputLabel value="NOMBRE" id="ol2"/>
+                                <af:outputText value="#{row.nombre}" id="ot7"/>
+                                <br/>
+                                <af:outputLabel value="FECHA INGRESO" id="ol3"/>
+                                <af:outputText value="#{row.fechaingreso}" id="ot8"/>
+                                <br/>
+                                <af:outputLabel value="EDAD" id="ol4"/>
+                                <af:outputText value="#{row.edad}" id="ot9"/>
+                            </af:dialog>
+                        </af:popup>
+                    </af:column>
+                    <af:column sortable="false" headerText="POP-UP 2" width="auto" id="c7"
+                               visible="#{viewScope.View1.shouldIshow}">
+                        <af:commandToolbarButton text="PopUp 2">
+                            <af:showPopupBehavior popupId="::p2"/>
+                        </af:commandToolbarButton>
                     </af:column>
                 </af:table>
             </af:gridCell>
         </af:gridRow>
     </af:panelGridLayout>
+    <af:popup childCreation="deferred" autoCancel="enabled" id="p2">
+        <af:region value="#{bindings.secondWindowPopUp1.regionModel}" id="r1"/>
+    </af:popup>
 </jsp:root>

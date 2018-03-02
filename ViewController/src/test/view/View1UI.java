@@ -6,7 +6,10 @@ import java.util.List;
 
 import javax.faces.event.ActionEvent;
 
+import oracle.adf.view.rich.event.DialogEvent.*;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
+
+import oracle.adf.view.rich.event.DialogEvent;
 
 import test.lib.JSFUtil;
 import test.lib.ADFUtil;
@@ -170,4 +173,16 @@ public class View1UI {
         return this.primitparams.isMostrarcontroles();
     }
 
+    public void closedDialog(DialogEvent dialogEvent) {
+        // Add event code here...
+
+        Outcome out = dialogEvent.getOutcome();
+
+        if (out == Outcome.yes) {
+            JSFUtil.addFacesInformationMessage("Se hizo click en Sí!!!");
+        } else {
+            JSFUtil.addFacesInformationMessage("Se hizo click en Nó!!!");
+        }
+
+    }
 }
