@@ -25,7 +25,7 @@
                                     <af:outputText value="Tama&#241;o actual de la lista: #{Main.listaSize}" id="ot3"
                                                    partialTriggers="b1" inlineStyle="font-size:large; color: Navy;"/>
                                     <af:spacer width="20" height="10" id="s1"/>
-                                    <af:button text="Refresh" action="#{Main.testoHere}" id="b1"/>
+                                    <af:button text="Refresh" action="#{Main.testoHere}" visible="false" id="b1"/>
                                 </af:gridCell>
                             </af:gridRow>
                             <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">

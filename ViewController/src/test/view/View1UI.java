@@ -93,11 +93,15 @@ public class View1UI {
     public String borrarDesdeButton(ActionEvent event) {
         // Add event code here...
 
+        
+
         RichButton buttonClicked = (RichButton) event.getComponent();
 
         int id = (Integer) buttonClicked.getAttributes().get("test");
 
         this.borrarEmpleado(id);
+        
+        this.disparadorDeEvento(event);
 
         return null;
     }

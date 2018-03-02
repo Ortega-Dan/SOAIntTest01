@@ -7,8 +7,8 @@
                 <af:panelGroupLayout id="pgl2" visible="#{viewScope.View1.shouldIshow}">
                     <af:outputText value="#{viewScope.View1.whatUp}" id="ot1"/>
                     <af:separator id="s1"/>
-                    <af:button text="Popular Datos" action="#{viewScope.View1.createEmployees}" id="b1"/>
-                    <af:button text="Borrar Todos" action="#{viewScope.View1.borrarTodosLosEmpleados}" id="b2"/>
+                    <af:button text="Popular Datos" action="#{viewScope.View1.createEmployees}" actionListener="#{viewScope.View1.disparadorDeEvento}" id="b1"/>
+                    <af:button text="Borrar Todos" action="#{viewScope.View1.borrarTodosLosEmpleados}" actionListener="#{viewScope.View1.disparadorDeEvento}" id="b2"/>
                     <af:separator id="s2"/>
                     <af:spacer width="10" height="18" id="s4"/>
                     <af:separator id="s3"/>
