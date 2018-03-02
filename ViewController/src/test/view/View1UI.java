@@ -6,8 +6,6 @@ import java.util.List;
 
 import javax.faces.event.ActionEvent;
 
-import javax.faces.event.ValueChangeEvent;
-
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 
 import test.lib.JSFUtil;
@@ -61,25 +59,31 @@ public class View1UI {
 
         this.listaemple.clear();
 
+        String howwas = "Exitoso";
+
+
         // UNCOMMENT THIS...
-        String howwas = FacadeEmpleados.fillEmpleados(this.listaemple);
+        //howwas = FacadeEmpleados.fillEmpleados(this.listaemple, howwas);
 
         // AND COMMENT FROM HERE ....
-        //        Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 1000000);
-        //        this.listaemple.add(empleado1);
-        //
-        //        Empleado empleado2 = new Empleado(5454354, "Carlos Suarez", new Date(), 2500000);
-        //        this.listaemple.add(empleado2);
-        //
-        //        Empleado empleado3 = new Empleado(8767665, "Jhon Martin", new Date(), 3500000);
-        //        this.listaemple.add(empleado3);
-        //
-        //        Empleado empleado4 = new Empleado(65463445, "Patricia Teheran", new Date(), 4000000);
-        //        this.listaemple.add(empleado4);
+        Empleado empleado1 = new Empleado(431242, "Juan Perez", new Date(), 1000000);
+        this.listaemple.add(empleado1);
+
+        Empleado empleado2 = new Empleado(5454354, "Carlos Suarez", new Date(), 2500000);
+        this.listaemple.add(empleado2);
+
+        Empleado empleado3 = new Empleado(8767665, "Jhon Martin", new Date(), 3500000);
+        this.listaemple.add(empleado3);
+
+        Empleado empleado4 = new Empleado(65463445, "Patricia Teheran", new Date(), 4000000);
+        this.listaemple.add(empleado4);
         // ... TO HERE !
 
-        if (!howwas.equals("Exitoso"))
+        if (!howwas.equals("Exitoso")) {
             JSFUtil.addErrorMessage("El error que recibimos es: \n" + howwas);
+        } else {
+            ADFUtil.dispararContextualEvent("onUpdateRefreshEventBinding", this.listaemple.size());
+        }
 
         return null;
 
@@ -88,6 +92,8 @@ public class View1UI {
     public String borrarTodosLosEmpleados() {
 
         this.listaemple.clear();
+
+        ADFUtil.dispararContextualEvent("onUpdateRefreshEventBinding", this.listaemple.size());
 
         return null;
     }
@@ -103,15 +109,18 @@ public class View1UI {
 
         this.borrarEmpleado(id);
 
-        this.disparadorDeEvento(event);
-
         return null;
     }
 
 
     public String borrarConID() {
 
-        this.borrarEmpleado(Integer.parseInt(this.empleadoID));
+        try {
+            this.borrarEmpleado(Integer.parseInt(this.empleadoID));
+        } catch (Exception e) {
+            //System.out.println("Error al intentar borrar un empleado sin id: " + e.getMessage());
+        }
+
         return null;
     }
 
@@ -128,6 +137,9 @@ public class View1UI {
             }
 
         }
+
+        ADFUtil.dispararContextualEvent("onUpdateRefreshEventBinding", this.listaemple.size());
+
     }
 
 
@@ -144,11 +156,4 @@ public class View1UI {
         return this.primitparams.isMostrarcontroles();
     }
 
-
-    public void disparadorDeEvento(ActionEvent actionEvent) {
-        // Add event code here...
-
-        ADFUtil.dispararContextualEvent("onUpdateRefreshEventBinding", (Integer)this.listaemple.size());
-
-    }
 }

@@ -20,9 +20,9 @@ public class FacadeEmpleados {
     }
 
 
-    public static String fillEmpleados(List<Empleado> listaallenar) {
+    public static String fillEmpleados(List<Empleado> listaallenar, String result) {
 
-        String result = "Exitoso";
+        
 
         try {
 
