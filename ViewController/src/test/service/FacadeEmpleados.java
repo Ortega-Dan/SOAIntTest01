@@ -3,6 +3,7 @@ package test.service;
 import java.util.List;
 
 import test.model.Empleado;
+
 import com.soaint.informacioncliente.ClienteType;
 import com.soaint.informacioncliente.InformacionClientePort;
 import com.soaint.informacioncliente.ListaCLienteType;
@@ -19,34 +20,49 @@ public class FacadeEmpleados {
     }
 
 
-    public static void fillEmpleados(List<Empleado> listaallenar) {
-        
-        ServicioInformacionCliente servicio = new ServicioInformacionCliente();
-        InformacionClientePort port = servicio.getInformacionCliente();
+    public static String fillEmpleados(List<Empleado> listaallenar) {
 
-        ClienteType rq = new ClienteType();
+        String result = "Exitoso";
 
-        rq.setNumeroIdentificacion(44);
+        try {
 
-        ListaCLienteType rs = port.consultarClientes(rq);
+            ServicioInformacionCliente servicio = new ServicioInformacionCliente();
+            InformacionClientePort port = servicio.getInformacionCliente();
 
-        //// Now do it ..
+            ClienteType rq = new ClienteType();
 
-        List<ClienteType> lista = new ArrayList<>();
-        lista = rs.getListadoClientes();
+            rq.setNumeroIdentificacion(44);
+
+            ListaCLienteType rs = port.consultarClientes(rq);
+
+            //// Now do it ..
+
+            List<ClienteType> lista = new ArrayList<>();
+            lista = rs.getListadoClientes();
 
 
-        Iterator itera = lista.iterator();
+            Iterator itera = lista.iterator();
 
-        while (itera.hasNext()) {
+            while (itera.hasNext()) {
 
-            ClienteType usuenserv = (ClienteType) itera.next();
+                ClienteType usuenserv = (ClienteType) itera.next();
+
+                Empleado emplo =
+                    new Empleado(usuenserv.getNumeroIdentificacion(),
+                                 usuenserv.getNombres() + " " + usuenserv.getApellidos(),
+                                 usuenserv.getFechaRegistro().toGregorianCalendar().getTime(), usuenserv.getEdad());
+                listaallenar.add(emplo);
+
+            }
+
+        } catch (Exception e) {
+
+            result = e.getMessage();
             
-            Empleado emplo = new Empleado(usuenserv.getNumeroIdentificacion(), usuenserv.getNombres() + " " + usuenserv.getApellidos(), usuenserv.getFechaRegistro().toGregorianCalendar().getTime(), usuenserv.getEdad());
-            listaallenar.add(emplo);
-
         }
 
+
+        return result;
     }
 
 

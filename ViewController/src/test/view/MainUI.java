@@ -78,5 +78,8 @@ public class MainUI {
         
         JSFUtil.refreshComponent(JSFUtil.findComponentInRoot("ot3"));
         
+        JSFUtil.addErrorMessage("Size: " + carga);
+        
+        
     }
 }
