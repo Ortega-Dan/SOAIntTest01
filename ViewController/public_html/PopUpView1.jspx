@@ -3,6 +3,22 @@
           xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
-        <af:outputText value="HOLA: #{pageFlowScope.PopUpView.popupemplo.nombre}" id="ot13"/>
+        <af:document title="2nd PopUp" id="d13">
+            <af:form id="f13">
+                <af:outputLabel value="ID" id="ol13"/>
+                <af:outputText value="#{pageFlowScope.PopUpView.popupemplo.id}" id="ot13"/>
+                <br/>
+                <af:outputLabel value="NOMBRE" id="ol23"/>
+                <af:outputText value="#{pageFlowScope.PopUpView.popupemplo.nombre}" id="ot23"/>
+                <br/>
+                <af:outputLabel value="FECHA INGRESO" id="ol33"/>
+                <af:outputText value="#{pageFlowScope.PopUpView.popupemplo.fechaingreso}" id="ot33"/>
+                <br/>
+                <af:outputLabel value="EDAD" id="ol43"/>
+                <af:outputText value="#{pageFlowScope.PopUpView.popupemplo.edad}" id="ot43"/>
+                <br/>
+                <af:button text="Regresar" action="cancel" id="b133"></af:button>
+            </af:form>
+        </af:document>
     </f:view>
 </jsp:root>

@@ -19,4 +19,29 @@
       <property
          name="exceptionHandler">false</property>
    </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn5">
+      <property
+         name="activityId">CancelReturn</property>
+      <property
+         name="x">593.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CancelReturn&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  CancelReturn&lt;/p></property>
+      <property
+         name="y">236.5459</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View3"
+      to="TaskFlowReturn5">
+      <property
+         name="fromOutcome">cancel</property>
+      <property
+         name="sdm:polyPoints">R50,367.6875,232.09766,552.0,236.19531,L50</property>
+   </ControlFlowCase>
 </SDM>
