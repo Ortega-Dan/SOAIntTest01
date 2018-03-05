@@ -8,8 +8,7 @@
                 <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
                     <f:facet name="center">
                         <af:panelGroupLayout id="pgl2" layout="scroll">
-                            <af:region value="#{bindings.fragmentsflow1.regionModel}" id="r1"
-                                       partialTriggers="::sor1"/>
+                            <af:region value="#{bindings.fragmentsflow1.regionModel}" id="r1" partialTriggers="::sor1"/>
                         </af:panelGroupLayout>
                     </f:facet>
                     <f:facet name="header"/>
@@ -41,6 +40,8 @@
                                     <af:selectBooleanCheckbox text="" value="#{Main.mostrarContextEventAlert}"
                                                               autoSubmit="true"
                                                               label="Mostrar alerta de evento contextual" id="sbc1"/>
+                                    <af:spacer width="10" height="30" id="s4"/>
+                                    <af:button text="Go to Page 2" action="goToPage2" id="b2"/>
                                 </af:gridCell>
                             </af:gridRow>
                         </af:panelGridLayout>

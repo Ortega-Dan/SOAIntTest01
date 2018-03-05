@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+    <task-flow-definition id="mainpagesFlow">
+        <default-activity>Main</default-activity>
+        <data-control-scope>
+            <shared/>
+        </data-control-scope>
+        <managed-bean id="__1">
+            <managed-bean-name>Main</managed-bean-name>
+            <managed-bean-class>test.view.MainUI</managed-bean-class>
+            <managed-bean-scope>view</managed-bean-scope>
+        </managed-bean>
+        <view id="Main">
+            <page>/Main.jspx</page>
+        </view>
+        <view id="Main2">
+            <page>/Main2.jspx</page>
+        </view>
+        <control-flow-rule id="__2">
+            <from-activity-id>Main</from-activity-id>
+            <control-flow-case id="__3">
+                <from-outcome>goToPage2</from-outcome>
+                <to-activity-id>Main2</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+        <control-flow-rule id="__4">
+            <from-activity-id>Main2</from-activity-id>
+            <control-flow-case id="__5">
+                <from-outcome>goToPage1</from-outcome>
+                <to-activity-id>Main</to-activity-id>
+            </control-flow-case>
+        </control-flow-rule>
+    </task-flow-definition>
+</adfc-config>
