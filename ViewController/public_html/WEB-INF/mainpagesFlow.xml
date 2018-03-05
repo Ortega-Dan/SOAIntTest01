@@ -8,7 +8,12 @@
         <managed-bean id="__1">
             <managed-bean-name>Main</managed-bean-name>
             <managed-bean-class>test.view.MainUI</managed-bean-class>
-            <managed-bean-scope>view</managed-bean-scope>
+            <managed-bean-scope>pageFlow</managed-bean-scope>
+        </managed-bean>
+        <managed-bean id="__6">
+            <managed-bean-name>Main2</managed-bean-name>
+            <managed-bean-class>test.view.MainUI2</managed-bean-class>
+            <managed-bean-scope>pageFlow</managed-bean-scope>
         </managed-bean>
         <view id="Main">
             <page>/Main.jspx</page>
@@ -16,6 +21,11 @@
         <view id="Main2">
             <page>/Main2.jspx</page>
         </view>
+        <task-flow-return id="taskFlowReturn1">
+            <outcome>
+                <name>taskFlowReturn1</name>
+            </outcome>
+        </task-flow-return>
         <control-flow-rule id="__2">
             <from-activity-id>Main</from-activity-id>
             <control-flow-case id="__3">
@@ -28,6 +38,10 @@
             <control-flow-case id="__5">
                 <from-outcome>goToPage1</from-outcome>
                 <to-activity-id>Main</to-activity-id>
+            </control-flow-case>
+            <control-flow-case id="__7">
+                <from-outcome>finish</from-outcome>
+                <to-activity-id>taskFlowReturn1</to-activity-id>
             </control-flow-case>
         </control-flow-rule>
     </task-flow-definition>

@@ -17,27 +17,27 @@
                         <af:panelGridLayout id="pgl1">
                             <af:gridRow marginTop="5px" height="auto" id="gr1">
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-                                    <af:outputText value="#{Main.saludo}" id="ot2"/>
+                                    <af:outputText value="#{pageFlowScope.Main.saludo}" id="ot2"/>
                                 </af:gridCell>
                             </af:gridRow>
                             <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                                    <af:outputText value="Tama&#241;o actual de la lista: #{Main.listaSize}" id="ot3"
+                                    <af:outputText value="Tama&#241;o actual de la lista: #{pageFlowScope.Main.listaSize}" id="ot3"
                                                    partialTriggers="b1" inlineStyle="font-size:large; color: Navy;"/>
                                     <af:spacer width="20" height="10" id="s1"/>
-                                    <af:button text="Refresh" action="#{Main.testoHere}" visible="false" id="b1"/>
+                                    <af:button text="Refresh" action="#{pageFlowScope.Main.testoHere}" visible="false" id="b1"/>
                                 </af:gridCell>
                             </af:gridRow>
                             <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                                     <af:spacer width="10" height="20" id="s2"/>
                                     <af:selectOneRadio label="MOSTRAR CONTROLES" autoSubmit="true"
-                                                       value="#{viewScope.Main.checkMark}" id="sor1">
+                                                       value="#{pageFlowScope.Main.checkMark}" id="sor1">
                                         <af:selectItem label="True" value="true" id="si1"/>
                                         <af:selectItem label="False" value="false" id="si2"/>
                                     </af:selectOneRadio>
                                     <af:spacer width="10" height="30" id="s3"/>
-                                    <af:selectBooleanCheckbox text="" value="#{Main.mostrarContextEventAlert}"
+                                    <af:selectBooleanCheckbox text="" value="#{pageFlowScope.Main.mostrarContextEventAlert}"
                                                               autoSubmit="true"
                                                               label="Mostrar alerta de evento contextual" id="sbc1"/>
                                     <af:spacer width="10" height="30" id="s4"/>

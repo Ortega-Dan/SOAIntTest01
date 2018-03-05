@@ -5,8 +5,11 @@
     <f:view>
         <af:document title="Main2" id="d1">
             <af:form id="f1">
-                <af:outputText value="fdsafsda" id="ot14"/>
-                <af:button text="Go Back" action="goToPage1" id="b1"/>
+                <af:outputText value="#{pageFlowScope.Main2.paramCont2.mostrarcontroles}" id="ot14"/>
+                <af:button text="Go Back" action="goToPage1" id="b14"/>
+                <af:panelGroupLayout id="pgl14">
+                    <af:region value="#{bindings.fragmentsflow1.regionModel}" id="r1"/>
+                </af:panelGroupLayout>
             </af:form>
         </af:document>
     </f:view>

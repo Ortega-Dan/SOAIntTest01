@@ -5,10 +5,12 @@ import java.util.List;
 
 import test.lib.JSFUtil;
 
+import java.io.Serializable;
+
 import test.model.BasicParamContainer;
 import test.model.Empleado;
 
-public class MainUI {
+public class MainUI implements Serializable{
 
     private static final String saludo = "Bienvenido a este programa, acá inicializamos una lista. Esta es la pagina.";
 

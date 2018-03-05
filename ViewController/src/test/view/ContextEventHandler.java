@@ -9,7 +9,7 @@ public class ContextEventHandler {
 
     public static void procesarEvento(Object carga) {
         
-        MainUI ventDest = (MainUI) JSFUtil.resolveExpression("#{viewScope.Main}");
+        MainUI ventDest = (MainUI) JSFUtil.resolveExpression("#{pageFlowScope.Main}");
         
         ventDest.recibirEvento(carga);
         
