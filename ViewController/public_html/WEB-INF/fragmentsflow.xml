@@ -30,6 +30,15 @@
                 <document>/WEB-INF/secondWindowPopUp.xml</document>
                 <id>secondWindowPopUp</id>
             </task-flow-reference>
+            <input-parameter id="__6">
+                <name>popUpEmpleado</name>
+                <value>#{viewScope.View1.emploforpopup}</value>
+            </input-parameter>
+            <run-as-dialog>
+                <display-type>
+                    <inline-popup/>
+                </display-type>
+            </run-as-dialog>
         </task-flow-call>
         <control-flow-rule id="__2">
             <from-activity-id>view1</from-activity-id>

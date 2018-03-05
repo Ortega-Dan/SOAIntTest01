@@ -3,21 +3,19 @@
    <OverallProperties
       id="OverallProperties1"/>
    <View
-      id="View2">
+      id="View3">
       <property
-         name="activityId">popUpView</property>
+         name="activityId">PopUpView1</property>
       <property
-         name="pageFragment">true</property>
-      <property
-         name="x">207.0</property>
+         name="x">326.6875</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>popUpView&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>PopUpView1&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">170.5459</property>
+         name="y">232.44824</property>
       <property
-         name="page">/popUpView.jsff</property>
+         name="page">/PopUpView1.jspx</property>
       <property
          name="exceptionHandler">false</property>
    </View>
