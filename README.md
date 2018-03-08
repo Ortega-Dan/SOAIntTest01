@@ -54,7 +54,8 @@ luego ese objeto puede llamar un metodo en el managebean destino, al cual tambi�
  jsfutil.REFRESHCOMOPONEN(jsfutil.findComponentinroot("id del componente que quieres actualizar"))
 ó
  Y aparte puedes generar una alerta (como JSFUTIL addFacesErrorMessage/infoMessage ...) haciendo uso del Objeto que recibes como Payload ... a fin de demostrar que el objeto si está pasando desde el origen, 
- ... y sobre todo, puedes usar algun atributo del managebean destino, a fin de demostrar que efectivamente obtuviste la misma instancia destino!! :)
+ 
+... y sobre todo, puedes usar algun atributo del managebean destino, a fin de demostrar que efectivamente obtuviste la misma instancia destino!! :)
 
 
 <FIN>
