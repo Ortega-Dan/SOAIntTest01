@@ -8,6 +8,9 @@ Progressive project
 This link helped a lot with the Contextual Events
 https://docs.oracle.com/cd/E26098_01/web.1112/e16182/contextual_events.htm#ADFFD22683
 
+IMPORTANT REGARDING CONTEXTUAL EVENTS!!
+Contextual event will be needed to use the existing instance of a foreign-flow managedBean, but not to refresh components !!!
+
 and all the instructions from here:
 
 <INICIO>
