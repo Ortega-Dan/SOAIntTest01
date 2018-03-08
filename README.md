@@ -43,7 +43,7 @@ luego ese objeto puede llamar un metodo en el managebean destino, al cual tambi√
 
 
 
-9) Luego en la pagina emisora, generas un  valuechangelistener o actionListener sobre el componente a generar el evento y usas dentro de ese evento ADFuTIL"dispararContextualEvent" ("*stringdentrodecomillasquedicequeeventBindingdisparo*", ValueChangeEvent.getNewValue) ....
+9) Luego en la pagina emisora, generas un  valuechangelistener o actionListener sobre el componente a generar el evento y usas dentro de ese evento ADFuTIL"dispararContextualEvent" ("*stringdentrodecomillasSoloconelnombredeleventBINDINGadisparar*", ValueChangeEvent.getNewValue) ....
 .... (en vez de ValueChangeEvent.getNewValue puedes poner algun otro objeto/valor que quieres pasar como Payload)
 
 
