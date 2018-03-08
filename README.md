@@ -30,7 +30,7 @@ and all the instructions from here:
 
 
 
-5) dentro del metodo del event Handler (que es el primer consumidor del evento, dado que el taskflow origen es el produtor por definición), generas un JSFUTIL QUE resolverá la ruta del managebean destino (la ruta en EXPRESSION LANGUAGE), y como eso resuelve a un objeto lo casteas a la clase del mismo managebean... 
+5) dentro del metodo del event Handler (que es el primer consumidor del evento, dado que el taskflow origen es el produtor por definición), generas un JSFUTIL QUE resolverá la ruta del managebean destino (la ruta en EXPRESSION LANGUAGE tal como se resuelve para la definición en el taskflow destino), y como eso resuelve a un objeto lo casteas a la clase del mismo managebean... 
 
 luego ese objeto puede llamar un metodo en el managebean destino, al cual también puede pasar el payload.. ()
 
