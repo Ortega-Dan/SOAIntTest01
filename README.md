@@ -37,18 +37,19 @@ luego ese objeto puede llamar un metodo en el managebean destino, al cual tambi�
 
 
 
-7) Luego en el pageDefinition de la pagina en la que tienes los 2 fragmentos en regiones distintas (o de la misma pag destino si es un evento de fragmento a vista contenedora) ... le das clickderecho al root de la estructura ("pagContenedora"PageDef) para crear un nuevo mapeo, y dentro de ese mismo mapeo agregas un event (con el mismo nombre de event que tiene el definido en el pageDef del generador del evento) haces click en el mapeo (el papá del event) y en las propiedades vas arriba al lapiz de editar, en donde defines el producer y consumer ...  y en parametro vas a ADF binding Y SELECCIONAS EL PAYLOAD...
+7) Luego en el pageDefinition de la pagina en la que tienes los 2 fragmentos en regiones distintas (o de la misma pag destino si es un evento de fragmento a vista contenedora) ... le das clickderecho al root de la estructura ("pagContenedora"PageDef) para crear un nuevo mapeo, y dentro de ese mismo mapeo agregas un event (con el mismo nombre de event que tiene el definido en el pageDef del generador del evento) haces click en el mapeo (el papá del event) y en la seccion/ventana de propiedades vas arriba al lapiz de editar, en donde defines el producer y consumer ...  y en parametro vas a ADF binding Y SELECCIONAS EL PAYLOAD... (data.payload)
 
 
 
-Luego en la pagina emisora, generas un  valuechangelistener sobre el componente a generar el evento y usas dentro de ese evento ADFuTIL"dispararContextualEvent" ("*stringdentrodecomillasquedicequeeventbindingdisparo*", ValueChangeEvent.getNewVlue)
+8) Luego en la pagina emisora, generas un  valuechangelistener o actionListener sobre el componente a generar el evento y usas dentro de ese evento ADFuTIL"dispararContextualEvent" ("*stringdentrodecomillasquedicequeeventBindingdisparo*", ValueChangeEvent.getNewValue) ....
+.... (en vez de ValueChangeEvent.getNewValue puedes poner algun otro objeto/valor que quieres pasar como Payload)
 
 
 
-y en el managebean destino:
+9) y en el metodo del managebean destino (que fue llamado por el metodoDelEventHandler) puedes usar:
  jsfutil.REFRESHCOMOPONEN(jsfutil.findComponentinroot("id del componente que quieres actualizar"))
 ó
- generas una alerta ... JSFUTIL addFaces ErrorMessage..
+ Y aparte puedes generar una alerta (como JSFUTIL addFacesErrorMessage/infoMessage ...) haciendo uso del Objeto que recibes como Payload ... a fin de demostrar que el objeto si está pasando desde el origen
 
 
 <FIN>
