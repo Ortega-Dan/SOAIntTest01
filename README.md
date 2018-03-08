@@ -40,10 +40,9 @@ luego ese objeto puede llamar un metodo en el managebean destino, al cual tambi�
 
 
 
-7) Luego en el pageDefinition de la pagina en la que tienes los 2 fragmentos en regiones distintas (o de la misma pag destino si es un evento de fragmento a vista contenedora) ... le das clickderecho al root de la estructura ("pagContenedora"PageDef) para crear un nuevo mapeo, y dentro de ese mismo mapeo agregas un event (con el mismo nombre de "evenT" que tiene el definido en el pageDef del generador del evento [no estoy seguro que esto sea fundamental]) 
+7) Luego en el pageDefinition de la pagina en la que tienes los 2 fragmentos en regiones distintas (o de la misma pag destino si es un evento de fragmento a vista contenedora) ... le das clickderecho al root de la estructura ("pagContenedora"PageDef) para crear un nuevo mapeo.
 
-8) En la misma estructura anterior haces click en el mapeo (el papá del event) y en la seccion/ventana de propiedades vas arriba al lapiz de editar, en donde defines el producer(ruta del eventBinding definido en taskflow origen) y consumer (actionMethod creado desde datacontrols de la clase del EventHandler) ...  y en parametros vas a ADF binding Y SELECCIONAS EL PAYLOAD... (data.payload) y como nombre del parametro le pones el nombre que le pusiste al objeto en la definición del evento del eventHandler.
-
+8) Haces click en el mapeo (el papá del event) y en la seccion/ventana de propiedades vas arriba al lapiz de editar, en donde defines el producer(ruta del eventBinding definido en taskflow origen) y consumer (actionMethod creado desde datacontrols de la clase del EventHandler) ...  y en parametros vas a ADF binding Y SELECCIONAS EL PAYLOAD... (data.payload) y como nombre del parametro le pones el nombre que le pusiste al objeto en la definición del evento del eventHandler.
 
 
 9) Luego en la pagina emisora, generas un  valuechangelistener o actionListener sobre el componente a generar el evento y usas dentro de ese evento ADFuTIL"dispararContextualEvent" ("*stringdentrodecomillasSoloconelnombredeleventBINDINGadisparar*", ValueChangeEvent.getNewValue) ....
